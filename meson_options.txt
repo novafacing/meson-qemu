@@ -1,0 +1,123 @@
+# We aren't going to support every single qemu compile option, just the ones needed for most
+# compiles. Feel free to PR more options, of course.
+
+option(
+    'target_list',
+    type: 'array',
+    value: [],
+    description: 'The list of targets to build.',
+    choices: [
+        'aarch64-softmmu',
+        'alpha-softmmu',
+        'arm-softmmu',
+        'avr-softmmu',
+        'cris-softmmu',
+        'hppa-softmmu',
+        'i386-softmmu',
+        'loongarch64-softmmu',
+        'm68k-softmmu',
+        'microblazeel-softmmu',
+        'microblaze-softmmu',
+        'mips64el-softmmu',
+        'mips64-softmmu',
+        'mipsel-softmmu',
+        'mips-softmmu',
+        'nios2-softmmu',
+        'or1k-softmmu',
+        'ppc64-softmmu',
+        'ppc-softmmu',
+        'riscv32-softmmu',
+        'riscv64-softmmu',
+        'rx-softmmu',
+        's390x-softmmu',
+        'sh4eb-softmmu',
+        'sh4-softmmu',
+        'sparc64-softmmu',
+        'sparc-softmmu',
+        'tricore-softmmu',
+        'x86_64-softmmu',
+        'xtensaeb-softmmu',
+        'xtensa-softmmu',
+        'aarch64_be-linux-user',
+        'aarch64-linux-user',
+        'alpha-linux-user',
+        'armeb-linux-user',
+        'arm-linux-user',
+        'cris-linux-user',
+        'hexagon-linux-user',
+        'hppa-linux-user',
+        'i386-linux-user',
+        'loongarch64-linux-user',
+        'm68k-linux-user',
+        'microblazeel-linux-user',
+        'microblaze-linux-user',
+        'mips64el-linux-user',
+        'mips64-linux-user',
+        'mipsel-linux-user',
+        'mips-linux-user',
+        'mipsn32el-linux-user',
+        'mipsn32-linux-user',
+        'nios2-linux-user',
+        'or1k-linux-user',
+        'ppc64le-linux-user',
+        'ppc64-linux-user',
+        'ppc-linux-user',
+        'riscv32-linux-user',
+        'riscv64-linux-user',
+        's390x-linux-user',
+        'sh4eb-linux-user',
+        'sh4-linux-user',
+        'sparc32plus-linux-user',
+        'sparc64-linux-user',
+        'sparc-linux-user',
+        'x86_64-linux-user',
+        'xtensaeb-linux-user',
+        'xtensa-linux-user',
+    ]
+)
+
+option(
+    'enable_plugins',
+    type: 'boolean',
+    value: false,
+    description: 'Whether to enable plugins. Defaults to false.'
+)
+
+option(
+    'enable_lto',
+    type: 'boolean',
+    value: false,
+    description: 'Whether to enable link time optimization. Defaults to false.'
+)
+
+option(
+    'bin_dir',
+    type: 'string',
+    description: 'The directory to install binaries to.'
+)
+
+option(
+    'cc',
+    type: 'string',
+    description: 'The C compiler to use.'
+)
+
+option(
+    'cxx',
+    type: 'string',
+    description: 'The C++ compiler to use.'
+)
+
+option(
+    'extra_cflags',
+    type: 'array',
+    value: [],
+    description: 'Extra CFLAGS to pass to the compiler.'
+)
+
+option(
+    'extra_cxxflags',
+    type: 'array',
+    value: [],
+    description: 'Extra CXXFLAGS to pass to the compiler.'
+)
