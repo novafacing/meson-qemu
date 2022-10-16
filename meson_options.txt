@@ -80,16 +80,16 @@ option(
 option(
     'enable_plugins',
     type: 'boolean',
-    value: false,
-    description: 'Whether to enable plugins. Defaults to false.',
+    value: true,
+    description: 'Whether to enable plugins. Defaults to true.',
     yield: true
 )
 
 option(
     'enable_lto',
     type: 'boolean',
-    value: false,
-    description: 'Whether to enable link time optimization. Defaults to false.',
+    value: true,
+    description: 'Whether to enable link time optimization. Defaults to true.',
     yield: true
 )
 
@@ -127,5 +127,13 @@ option(
     type: 'array',
     value: [],
     description: 'Extra CXXFLAGS to pass to the compiler.',
+    yield: true
+)
+
+option(
+    'extra_ldflags',
+    type: 'array',
+    value: ['-ldl'],
+    description: 'Extra LDFLAGS to pass to the compiler.',
     yield: true
 )

@@ -49,6 +49,12 @@ else
     qemu_configure_arg_extra_cxxflags = ''
 endif
 
+if get_option('extra_ldflags') != []
+    qemu_configure_arg_extra_ldflags = '--extra-ldflags=' + ' '.join(get_option('extra_ldflags'))
+else
+    qemu_configure_arg_extra_ldflags = ''
+endif
+
 qemu_configure_args = []
 
 if qemu_configure_arg_target_list != ''
@@ -79,6 +85,10 @@ if qemu_configure_arg_extra_cxxflags != ''
     qemu_configure_args += [qemu_configure_arg_extra_cxxflags]
 endif
 
+if qemu_configure_arg_extra_ldflags != ''
+    qemu_configure_args += [qemu_configure_arg_extra_ldflags]
+endif
+
 if not fs.exists(qemu_dir)
     message('Checking out QEMU source code...')
     run_command(git, 'clone', qemu_git_repo, qemu_dir, check: true)
@@ -88,6 +98,7 @@ else
 endif
 
 message('Configuring QEMU...')
+message('Qemu args: ' + qemu_configure_args)
 qemu_configure = run_command(
     bash,
     '-c',
@@ -181,6 +192,7 @@ foreach target : target_bin_list
     target_bins += [tgt_name]
 endforeach
 
+qemu_inc_dir = include_directories(qemu_dir / 'include' / 'qemu')
 target_qemu_bins = custom_target(
     'qemu_bins',
     output: target_bins,
