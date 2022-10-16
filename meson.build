@@ -102,7 +102,7 @@ message('Qemu args: ' + ' '.join(qemu_configure_args))
 qemu_configure = run_command(
     bash,
     '-c',
-    'cd ' + meson.current_build_dir() + ' && ' + (qemu_dir / 'configure') + ' '.join(qemu_configure_args) + '',
+    'cd ' + meson.current_build_dir() + ' && ' + (qemu_dir / 'configure') + ' ' + ' '.join(qemu_configure_args) + '',
     check: true
 )
 
