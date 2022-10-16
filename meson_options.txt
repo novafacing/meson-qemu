@@ -73,51 +73,59 @@ option(
         'x86_64-linux-user',
         'xtensaeb-linux-user',
         'xtensa-linux-user',
-    ]
+    ],
+    yield: true
 )
 
 option(
     'enable_plugins',
     type: 'boolean',
     value: false,
-    description: 'Whether to enable plugins. Defaults to false.'
+    description: 'Whether to enable plugins. Defaults to false.',
+    yield: true
 )
 
 option(
     'enable_lto',
     type: 'boolean',
     value: false,
-    description: 'Whether to enable link time optimization. Defaults to false.'
+    description: 'Whether to enable link time optimization. Defaults to false.',
+    yield: true
 )
 
 option(
     'bin_dir',
     type: 'string',
-    description: 'The directory to install binaries to.'
+    description: 'The directory to install binaries to.',
+    yield: true
 )
 
 option(
     'cc',
     type: 'string',
-    description: 'The C compiler to use.'
+    description: 'The C compiler to use.',
+    yield: true
 )
 
 option(
     'cxx',
     type: 'string',
-    description: 'The C++ compiler to use.'
+    description: 'The C++ compiler to use.',
+    yield: true
 )
 
 option(
     'extra_cflags',
     type: 'array',
     value: [],
-    description: 'Extra CFLAGS to pass to the compiler.'
+    description: 'Extra CFLAGS to pass to the compiler.',
+    yield: true
 )
 
 option(
     'extra_cxxflags',
     type: 'array',
     value: [],
-    description: 'Extra CXXFLAGS to pass to the compiler.'
+    description: 'Extra CXXFLAGS to pass to the compiler.',
+    yield: true
 )
