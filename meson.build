@@ -98,7 +98,7 @@ else
 endif
 
 message('Configuring QEMU...')
-message('Qemu args: ' + qemu_configure_args)
+message('Qemu args: ' + ' '.join(qemu_configure_args))
 qemu_configure = run_command(
     bash,
     '-c',
