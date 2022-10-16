@@ -192,7 +192,7 @@ foreach target : target_bin_list
     target_bins += [tgt_name]
 endforeach
 
-qemu_inc_dir = include_directories(qemu_dir / 'include' / 'qemu')
+qemu_inc_dir = include_directories('qemu' / 'include' / 'qemu')
 target_qemu_bins = custom_target(
     'qemu_bins',
     output: target_bins,
